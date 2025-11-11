@@ -1,0 +1,16 @@
+@use "./variables" as *;
+
+@mixin container {
+  width: min(100% - 32px, $maxw);
+  margin-inline: auto;
+}
+@mixin card {
+  background: $surface;
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+@mixin focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(31,122,236,.35);
+}
