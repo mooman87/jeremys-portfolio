@@ -13,7 +13,7 @@ const NAV: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "#work" },
   { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  // { label: "Contact", href: "#contact" },
 ];
 
 export default function Header() {
@@ -71,7 +71,7 @@ export default function Header() {
         <div className="header-socials">
         <a href="https://github.com/mooman87"><Github size={24} /></a>
         <a href="https://linkedin.com/in/jeremy-lese"><Linkedin size={24} /></a>
-        <a href={`${profile.email}`}><Mail size={24} /></a>
+        <a href={`mailto:${profile.email}`}><Mail size={24} /></a>
         </div>
       </div>
 
