@@ -322,24 +322,6 @@ html[data-reveal="ready"] .reveal-root {
   }
 }
 
-
-.header-socials {
-  display: flex;
-  gap: 10px;
-  justify-content: flex-end;
-  a { 
-    color: $brand-accent;
-    stroke-width: 1.5; 
-    width: 26px; height: 26px;
-    transition: transform .15s ease, color .15s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      color: $brand-accent;
-    }
-  }
-}
-
 .toolkit {
   display: flex;
   flex-wrap: wrap;
@@ -488,7 +470,6 @@ html[data-reveal="ready"] .reveal-root {
   }
 }
 
-
 @media (prefers-reduced-motion: reduce) {
   .project.card-neon,
   .project.card-neon .image-wrapper .project-image,
@@ -496,4 +477,24 @@ html[data-reveal="ready"] .reveal-root {
     transition: none !important;
     transform: none !important;
   }
+}
+
+.about-grid {
+
+}
+
+.about-left  { grid-column: span 7; }
+.about-right { grid-column: span 5; }
+
+/* Stack on mobile */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;  
+  }
+  .about-left,
+  .about-right {
+    grid-column: 1 / -1;
+  }
+
+  .about-right { margin-top: 12px; }
 }

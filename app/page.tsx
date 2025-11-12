@@ -42,7 +42,6 @@ export default function Home() {
           ) : null}
         </aside>
       </section>
-
         <section id="work" className="grid">
           <div className="section-title">
             <h2>Selected Highlights</h2>
@@ -52,40 +51,40 @@ export default function Home() {
           </div>
         </section>
         <hr className="sep" />
-        <section id="about" className="grid">
-          <div className="card" style={{gridColumn: "span 7"}}>
-            <h2>Toolkit</h2>
-            <div className="toolkit" style={{ marginTop: 12 }}>
-              {profile.tools.map(s => (
-                <a
-                  key={s.label}
-                  href={s.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="icon-link"
-                  title={s.label}
-                >
-                  <img src={s.icon} alt={s.label} />
-                </a>
-                
-              ))}
-            </div>
-          </div>
-          
-          <div className="card" style={{gridColumn: "span 5"}}>
-            <h3>Professional Experience</h3>
-            <div className="timeline">
-              {experience.map((e) => (
-                <div className="item" key={e.company}>
-                  <strong>{e.role} — {e.company}</strong>
-                  <span className="when">{e.when}</span>
-                  <p>{e.blurb}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section id="about" className="grid about-grid">
+  <div className="card about-left">
+    <h2>Toolkit</h2>
+    <div className="toolkit" style={{ marginTop: 12 }}>
+      {profile.tools.map(s => (
+        <a
+          key={s.label}
+          href={s.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={s.label}
+          className="icon-link"
+          title={s.label}
+        >
+          <img src={s.icon} alt={s.label} />
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <div className="card about-right">
+    <h3>Professional Experience</h3>
+    <div className="timeline">
+      {experience.map((e) => (
+        <div className="item" key={e.company}>
+          <strong>{e.role} — {e.company}</strong>
+          <span className="when">{e.when}</span>
+          <p>{e.blurb}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
         {/* <hr className="sep" />
 

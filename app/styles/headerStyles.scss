@@ -79,7 +79,24 @@
     }
   }
   
-  /* Mobile sheet */
+  .header-socials {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    a { 
+      color: $brand-accent;
+      stroke-width: 1.5; 
+      width: 26px; height: 26px;
+      transition: transform .15s ease, color .15s ease;
+  
+      &:hover {
+        transform: translateY(-2px);
+        color: $brand-accent;
+      }
+    }
+  }
+
+
   .mobile-sheet {
     display: grid; gap: 6px;
     padding: 10px 12px 14px;
@@ -103,3 +120,53 @@
       &.active { border-color: rgba(124,58,237,.35); }
     }
   }
+
+@media (max-width: 900px) {
+  .nav { padding: 8px 0; } 
+}
+
+
+.mobile-sheet {
+  display: grid;
+  gap: 6px;
+
+
+  max-height: 0;
+  padding: 0 12px;             
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);  
+  border-bottom: 0;             
+  background: linear-gradient(180deg, rgba(8,10,14,.95), rgba(8,10,14,.70));
+  transform-origin: top;
+  pointer-events: none;
+  transition:
+    max-height .25s ease,
+    padding .2s ease,
+    opacity .2s ease,
+    transform .2s ease;
+
+  @media (min-width: 900px) { display: none; }
+
+  
+  &.show {
+    max-height: 60vh;           
+    padding: 10px 12px 14px;    
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+
+  .sheet-link {
+    display: block;
+    padding: 10px 8px;
+    border-radius: 10px;
+    color: $text;
+    text-decoration: none;
+    opacity: .95;
+    border: 1px solid rgba(255,255,255,.06);
+    background: rgba(255,255,255,.03);
+    &:hover { background: rgba(255,255,255,.06); }
+  }
+}
